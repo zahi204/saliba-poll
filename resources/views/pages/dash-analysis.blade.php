@@ -110,6 +110,27 @@
         </div>
       </div>
     </div>
+
+    
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+              <div class="avatar-content">
+                <!-- <i class="feather feather-UsersIcon text-success font-medium-5"></i> -->
+                <img class="" src="{{asset('images/portrait/small/person.png') }}" alt="avatar" height="30" width="30" />
+
+              </div>
+            </div>
+            <h2 class="text-bold-700">{{$FriendTotal}}</h2>
+            <p class="mb-0 line-ellipsis">Friend</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <div class="col-xl-2 col-md-4 col-sm-6">
       <div class="card text-center">
         <div class="card-content">
@@ -125,7 +146,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-4 col-md-8 col-sm-12">
+    <div class="col-xl-2 col-md-4 col-sm-6">
       <div class="card text-center">
         <div class="card-content">
           <div class="card-body">
@@ -140,6 +161,7 @@
         </div>
       </div>
     </div>
+
 
   </div>
 
@@ -244,6 +266,99 @@
   </div><!-- end of row 3 -->
 
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-8 col-12">
+      <div class="row">
+          <div class="col-xl-4 col-md-4 col-sm-6">
+            <div class="card text-center">
+              <div class="card-content">
+                <div class="card-body">
+                  <!-- <div class="avatar bg-rgba-info  m-0 mb-1"> -->
+                    <!-- <div class="avatar-content">
+                      <img class="" src="{{asset('images/portrait/small/fb.png') }}" alt="avatar" height="30" width="30" />
+                    </div> -->
+                  <!-- </div> -->
+                  <h2 class="text-bold-700" style="color: rgb(115, 103, 240);">{{$yesTotal}}</h2>
+                  <p class="mb-0 line-ellipsis" style="color: rgb(115, 103, 240);">New Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-4 col-sm-6">
+            <div class="card text-center">
+              <div class="card-content">
+                <div class="card-body">
+                  <!-- <div class="avatar bg-rgba-info  m-0 mb-1"> -->
+                    <!-- <div class="avatar-content">
+                      <img class="" src="{{asset('images/portrait/small/fb.png') }}" alt="avatar" height="30" width="30" />
+                    </div> -->
+                  <!-- </div> -->
+                  <h2 class="text-bold-700" style="color: rgb(235, 84, 85);">{{$noTotal}}</h2>
+                  <p class="mb-0 line-ellipsis" style="color: rgb(235, 84, 85);">Old Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xl-4 col-md-4 col-sm-6">
+            <div class="card text-center">
+              <div class="card-content">
+                <div class="card-body">
+                  <!-- <div class="avatar bg-rgba-info  m-0 mb-1"> -->
+                    <!-- <div class="avatar-content">
+                      <img class="" src="{{asset('images/portrait/small/fb.png') }}" alt="avatar" height="30" width="30" />
+                    </div> -->
+                  <!-- </div> -->
+                  <h2 class="text-bold-700">{{$yesTotal + $noTotal}}</h2>
+                  <p class="mb-0 line-ellipsis">Total Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-12">
+        <div id="text1">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-end ">
+              <h4 class="card-title ">Number of New/Old customers per day</h4>
+            </div>
+            <div class="card-content">
+
+              <div class="card-body pb-0">
+
+                <div class="d-flex justify-content-start"></div>
+
+                <div id="revenue-chart-yesno" style="overflow: auto;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="col-xs-12 col-sm-12 col-lg-4 col-12">
+      <div class="card">
+        <div class="card-header flex-column align-items-start">
+          <h4 class="card-title mb-75">Percent of New/Old customers</h4>
+        </div>
+        <div class="card-body">
+          <div id="donut-chart-yesno"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of row 4 -->
+
+
+
+
 </div>
 
 
@@ -258,10 +373,13 @@
   <input Hidden name="fb" type="text" class="form-control" id="fbBtn2" value='<?php echo $FbTotal; ?>' placeholder="">
   <input Hidden name="ig" type="text" class="form-control" id="IgBtn2" value='<?php echo $InstTotal; ?>' placeholder="">
   <input Hidden name="tik" type="text" class="form-control" id="TikBtn2" value='<?php echo $TikTotal; ?>' placeholder="">
+  <input Hidden name="friend" type="text" class="form-control" id="FriendBtn2" value='<?php echo $FriendTotal; ?>' placeholder="">
+
   <input Hidden name="oth" type="text" class="form-control" id="OthBtn2" value='<?php echo $OthTotal; ?>' placeholder="">
 
-  <!-- <input Hidden name="oth" type="text" class="form-control" id="OthBtn2"  value='<?php echo $OthTotal; ?>'placeholder="" >
-<input Hidden name="oth" type="text" class="form-control" id="OthBtn2"  value='<?php echo $OthTotal; ?>'placeholder="" > -->
+
+  <input Hidden name="yes" type="text" class="form-control" id="yesBtn2" value='<?php echo $yesTotal; ?>' placeholder="">
+  <input Hidden name="no" type="text" class="form-control" id="noBtn2" value='<?php echo $noTotal; ?>' placeholder="">
 
 
 
@@ -289,15 +407,28 @@
   var btnFaceVal = parseInt(document.getElementById('fbBtn2').value);
   var btnInstaVal = parseInt(document.getElementById('IgBtn2').value);
   var btnTikVal = parseInt(document.getElementById('TikBtn2').value);
+  var btnFriendVal = parseInt(document.getElementById('FriendBtn2').value);
+
   var btnOthVal = parseInt(document.getElementById('OthBtn2').value);
 
 
-  var total = btnFaceVal + btnInstaVal + btnTikVal + btnOthVal;
+  var total = btnFaceVal + btnInstaVal + btnTikVal + btnOthVal + btnFriendVal;
 
   var fbperc = (btnFaceVal / total) * 100;
   var instperc = (btnInstaVal / total) * 100;
   var tikperc = (btnTikVal / total) * 100;
+  var friendperc = (btnFriendVal / total) * 100;
+
   var othperc = (btnOthVal / total) * 100;
+
+
+
+  var btnYesVal = parseInt(document.getElementById('yesBtn2').value);
+  var btnNoVal = parseInt(document.getElementById('noBtn2').value);
+  var total2 = btnYesVal + btnNoVal;
+  var yesperc = (btnYesVal / total2) * 100;
+  var noperc = (btnNoVal / total2) * 100;
+
 
 
 
@@ -313,7 +444,7 @@
   var $strok_color = '#b9c3cd';
   var $label_color = '#e7eef7';
   var $purple = '#df87f2';
-  var $white = '#fff';
+  var $white = '#000000';
   var $yel = '#FFFF00';
 
 
@@ -322,6 +453,7 @@
       fb: $primary, //'#ffe700', // facebook
       inst: $danger, //'#00d4bd', //tiktok
       tik: $warning, //'#826bf8', // instagram
+      friend: $white,
       oth: $yel, //'#2b9bf4', // other
     },
   };
@@ -339,7 +471,7 @@
       position: 'bottom'
     },
     colors: [chartColors.donut.fb, chartColors.donut.inst,
-      chartColors.donut.tik, chartColors.donut.oth
+      chartColors.donut.tik,chartColors.donut.friend, chartColors.donut.oth
     ],
     fill: {
       type: 'gradient',
@@ -348,7 +480,7 @@
         shade: 'dark',
         type: 'vertical',
         shadeIntensity: 0.5,
-        gradientToColors: [$primary_light, $danger_light, $warning_light, $yel],
+        gradientToColors: [$primary_light, $danger_light, $warning_light,$white, $yel],
         inverseColors: false,
         opacityFrom: 1,
         opacityTo: 1,
@@ -388,8 +520,8 @@
         }
       }
     },
-    series: [~~fbperc, ~~instperc, ~~tikperc, ~~othperc],
-    labels: ['Facebook', 'Instagram', 'Tiktok', 'Other'],
+    series: [~~fbperc, ~~instperc, ~~tikperc,~~friendperc, ~~othperc],
+    labels: ['Facebook', 'Instagram', 'Tiktok','Friends', 'Other'],
 
   }
 
@@ -407,6 +539,8 @@
   var facebookDayByDay = <?php echo $facebookDayByDay; ?>;
   var instagramDayByDay = <?php echo $instagramDayByDay; ?>;
   var tiktokDayByDay = <?php echo $tiktokDayByDay; ?>;
+  var friendDayByDay = <?php echo $friendDayByDay; ?>;
+
   var otherDayByDay = <?php echo $otherDayByDay; ?>;
 
   const dynamicWidth = dates.length * 50;
@@ -416,6 +550,8 @@
   facebookDayByDay.reverse();
   instagramDayByDay.reverse();
   tiktokDayByDay.reverse();
+  friendDayByDay.reverse();
+
   otherDayByDay.reverse();
   // Revenue  Chart
   // -----------------------------
@@ -440,8 +576,8 @@
 
     stroke: {
       curve: 'smooth',
-      dashArray: [0, 0, 0, 0],
-      width: [4, 4, 4, 4],
+      dashArray: [0, 0, 0, 0,0],
+      width: [4, 4, 4, 4,4],
     },
     grid: {
       borderColor: $label_color,
@@ -450,7 +586,7 @@
       show: false,
     },
     colors: [chartColors.donut.fb, chartColors.donut.inst,
-      chartColors.donut.tik, chartColors.donut.oth
+      chartColors.donut.tik,chartColors.donut.friend, chartColors.donut.oth
     ],
 
     fill: {
@@ -458,7 +594,7 @@
       gradient: {
         shade: 'dark',
         inverseColors: false,
-        gradientToColors: [$primary_light, $danger_light, $warning_light, $yel],
+        gradientToColors: [$primary_light, $danger_light, $warning_light,$white, $yel],
         shadeIntensity: 1,
         type: 'horizontal',
         opacityFrom: 1,
@@ -525,6 +661,10 @@
         data: tiktokDayByDay
       },
 
+      {
+        name: "Friend",
+        data: friendDayByDay
+      },
 
       {
         name: "Other",
@@ -561,8 +701,8 @@
         show: false
       }
     },
-    labels: ['Facebook', 'Instagram', 'Tiktok', 'Other'],
-    series: [~~fbperc, ~~instperc, ~~tikperc, ~~othperc],
+    labels: ['Facebook', 'Instagram', 'Tiktok','Friends', 'Other'],
+    series: [~~fbperc, ~~instperc, ~~tikperc,~~friendperc, ~~othperc],
     dataLabels: {
       enabled: true
     },
@@ -576,11 +716,11 @@
     stroke: {
       width: 4
     },
-    colors: [$primary, $warning, $danger, $info],
+    colors: [$primary, $warning, $danger,$white, $info],
     fill: {
       type: 'gradient',
       gradient: {
-        gradientToColors: [$primary_light, $warning_light, $danger_light, $yel]
+        gradientToColors: [$primary_light, $warning_light, $danger_light,$white, $yel]
       }
     }
   }
@@ -609,12 +749,14 @@
         show: true,
         position: 'bottom'
       },
-      labels: ['Facebook', 'Instagram', 'Tiktok', 'Other'],
-      series: [btnFaceVal, btnInstaVal, btnTikVal, btnOthVal],
+      labels: ['Facebook', 'Instagram', 'Tiktok','Friend', 'Other'],
+      series: [btnFaceVal, btnInstaVal, btnTikVal,btnFriendVal, btnOthVal],
       colors: [
         chartColors.donut.fb,
         chartColors.donut.inst,
         chartColors.donut.tik,
+        chartColors.donut.friend,
+
         chartColors.donut.oth
       ],
       dataLabels: {
@@ -691,7 +833,319 @@
     var donutChart = new ApexCharts(donutChartEl, donutChartConfig);
     donutChart.render();
   }
+
+
+
+
+
+
+
+
+
+  var dates2 = <?php echo $dates2; ?>;
+  var yesDayByDay = <?php echo $yesDayByDay; ?>;
+  var noDayByDay = <?php echo $noDayByDay; ?>;
+
+
+  const dynamicWidth2 = dates2.length * 50;
+  const chartWidth2 = dynamicWidth < window.innerWidth ? '100%' : dynamicWidth;
+
+  dates2.reverse();
+  yesDayByDay.reverse();
+  noDayByDay.reverse();
+
+  // Revenue  Chart
+  // -----------------------------
+
+  var revenueChartoptions2 = {
+    chart: {
+      height: 260,
+      width: chartWidth,
+      toolbar: {
+        show: false
+      },
+
+      type: 'line',
+      animations: {
+        enabled: true,
+        easing: 'linear',
+        dynamicAnimation: {
+          speed: 1000
+        }
+      },
+    },
+
+    stroke: {
+      curve: 'smooth',
+      dashArray: [0, 0, 0, 0,0],
+      width: [4, 4, 4, 4,4],
+    },
+    grid: {
+      borderColor: $label_color,
+    },
+    legend: {
+      show: false,
+    },
+    colors: [chartColors.donut.fb, chartColors.donut.inst,
+      chartColors.donut.tik,chartColors.donut.friend, chartColors.donut.oth
+    ],
+
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'dark',
+        inverseColors: false,
+        gradientToColors: [$primary_light, $danger_light, $warning_light,$white, $yel],
+        shadeIntensity: 1,
+        type: 'horizontal',
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100, 100, 100]
+      },
+    },
+    markers: {
+      size: 0,
+      hover: {
+        size: 5
+      }
+    },
+    xaxis: {
+      labels: {
+        style: {
+          colors: $strok_color,
+        }
+      },
+      tickAmount: 10,
+      axisTicks: {
+        show: false,
+      },
+      categories: dates,
+      axisBorder: {
+        show: false,
+      },
+      tickPlacement: 'on',
+    },
+    yaxis: {
+      labels: {
+        formatter: function(val) {
+          return val.toFixed(0);
+        }
+      },
+      forceNiceScale: true,
+      decimalsInFloat: 0,
+
+    },
+    tooltip: {
+      x: {
+        show: true
+      }
+    },
+    series: [{
+        name: "New Customer",
+        data: yesDayByDay
+      },
+      {
+        name: "Old customer",
+        data: noDayByDay
+      }
+    ],
+
+  }
+
+  var revenueChart2 = new ApexCharts(
+    document.querySelector("#revenue-chart-yesno"),
+    revenueChartoptions2
+  );
+
+  revenueChart2.render();
+
+
+
+
+  var donutChartEl2 = document.querySelector('#donut-chart-yesno'),
+    donutChartConfig2 = {
+      chart: {
+        height: 400,
+        type: 'donut'
+      },
+      legend: {
+        show: true,
+        position: 'bottom'
+      },
+      labels: ['New customer' , 'Old customer'],
+      series: [btnYesVal, btnNoVal],
+      colors: [
+        chartColors.donut.fb,
+        chartColors.donut.inst,
+
+      ],
+      dataLabels: {
+        enabled: true,
+        formatter: function(val, opt) {
+          return parseInt(val)+ '%';
+        }
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              name: {
+                fontSize: '2rem',
+                fontFamily: 'Montserrat'
+              },
+              value: {
+                fontSize: '1rem',
+                fontFamily: 'Montserrat',
+                formatter: function(val) {
+                  return parseInt(val) ;
+                }
+              },
+              total: {
+                show: false,
+                fontSize: '1.5rem',
+                label: 'Operational',
+                formatter: function(w) {
+                  return '31%';
+                }
+              }
+            }
+          }
+        }
+      },
+      responsive: [{
+          breakpoint: 992,
+          options: {
+            chart: {
+              height: 380
+            }
+          }
+        },
+        {
+          breakpoint: 576,
+          options: {
+            chart: {
+              height: 320
+            },
+            plotOptions: {
+              pie: {
+                donut: {
+                  labels: {
+                    show: false,
+                    name: {
+                      fontSize: '0.1rem'
+                    },
+                    value: {
+                      fontSize: '1rem'
+                    },
+                    total: {
+                      fontSize: '1.5rem'
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    };
+  if (typeof donutChartEl2 !== undefined && donutChartEl2 !== null) {
+    var donutChart2 = new ApexCharts(donutChartEl2, donutChartConfig2);
+    donutChart2.render();
+  }
+
+
+
+
+
+
+  var options = {
+  chart: {
+    height: 350,
+    type: "line",
+    stacked: false
+  },
+  dataLabels: {
+    enabled: false
+  },
+  colors: ['#99C2A2', '#C5EDAC', '#66C7F4'],
+  series: [
+    
+    {
+      name: 'New Customers',
+      type: 'column',
+      data: yesDayByDay
+    },
+    {
+      name: "Old Customers",
+      type: 'column',
+      data: noDayByDay
+    },
+    
+  ],
+  stroke: {
+    width: [4, 4]
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: "40%"
+    }
+  },
+  xaxis: {
+    categories: dates2
+  },
+  yaxis: [
+    {
+      seriesName: 'Column A',
+      axisTicks: {
+        show: true
+      },
+      axisBorder: {
+        show: true,
+      },
+      title: {
+        text: "Columns"
+      }
+    },
+    {
+      seriesName: 'Column A',
+      show: false
+    }
+  ],
+  tooltip: {
+    shared: false,
+    intersect: true,
+    x: {
+      show: false
+    }
+  },
+  legend: {
+    horizontalAlign: "left",
+    offsetX: 40
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+chart.render();
+
+
+
+
+
+
+
 </script>
+
+
+
+
+
+
+
+
+
+
 
 
 @endsection
